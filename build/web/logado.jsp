@@ -34,35 +34,34 @@
             <form name="frmAtualizar" action="CadastroLogin" method="post">    
                  <input type="hidden" id="acao" name="acao" value=""/>
                 <table>
-                    <tr>
-                       <td><strong>Id</strong></td>
-                       <td><strong>Nome</strong></td>
-                       <td><strong>Email</strong></td>
-                       <td><strong>Senha</strong></td>
+                    <tr class="row">
+                       <td class="col-1"><strong>Id</strong></td>
+                       <td class="col-2"><strong>Nome</strong></td>
+                       <td class="col-2"><strong>Email</strong></td>
+                       <td class="col-2"><strong>Senha</strong></td>
                     </tr>
-                    <tr>
-                   
-                        <td><input type="text" name="id" size="1" value="${usuario.id}" readonly/></td>    
-                        <td><input type="text" name="nome" size="35" value="${usuario.nome}"/></td>
-                        <td><input type="text" name="email" size="35" value="${usuario.email}"/></td>
-                        <td><input type="text" name="senha" size="5" value="${usuario.senha}"/></td>
-                         <td><input type="submit" name="excluir" value="Excluir" onclick="document.getElementById('acao').value='excluir'"/></td>
-                        <td><input type="submit" name="atualizar" value="Atualizar" onclick="document.getElementById('acao').value='atualizar'"/></td>
+                    <tr class="row">                   
+                        <td class="col-1"><input type="text" name="id" size="1" value="${usuario.id}" readonly/></td>    
+                        <td class="col-2"><input type="text" name="nome" size="35" value="${usuario.nome}"/></td>
+                        <td class="col-2"><input type="text" name="email" size="35" value="${usuario.email}"/></td>
+                        <td class="col-2"><input type="text" name="senha" size="5" value="${usuario.senha}"/></td>
+                        <td class="col-2"><input type="submit" name="excluir" value="Excluir" onclick="document.getElementById('acao').value='excluir'"/></td>
+                        <td class="col-2"><input type="submit" name="atualizar" value="Atualizar" onclick="document.getElementById('acao').value='atualizar'"/></td>
                     </tr>                   
                 </table>   
             </form>      
             </div>
         <h3>Usuários cadastrados no sistema:</h3>
         <br>   
-       <div class="d-flex content-justify-center" style="height: 200px; overflow-y: auto;">
+       <div class="row table-responsive" style="width: 1300px; height: 200px; overflow-y: auto;">
         <table class="table table-hover" >
-            <thead>
-                <tr style="position: sticky; top: 0; background-color: #f8f9fa;">
-                    <td><strong>Id</strong></td>
-                    <td><strong>Nome</strong></td>
-                    <td><strong>Email</strong></td>
-                    <td><strong>Senha</strong></td>
-                    <td><strong></strong></td>
+            <thead class="sticky-top bg-light" >
+                <tr>
+                    <th><strong>Id</strong></th>
+                    <th><strong>Nome</strong></th>
+                    <th><strong>Email</strong></th>
+                    <th><strong>Senha</strong></th>
+                    <th><strong></strong></th>
                 </tr>
             </thead>
             <tbody>
@@ -81,11 +80,11 @@
             %>    
            
             <tr>
-                <td><%=u.getId()%></td>
-                <td><%=u.getNome()%></td>    
-                <td><%=u.getEmail()%></td>
-                <td><%=u.getSenha()%></td>
-                <td><a href="CadastroLogin?id=<%=u.getId()%>">Editar</a></td>
+                <td style="width: 5%;"><%=u.getId()%></td>
+                <td style="width: 30%;"><%=u.getNome()%></td>    
+                <td style="width: 30%"><%=u.getEmail()%></td>
+                <td style="width: 30%"><%=u.getSenha()%></td>
+                <td style="width: 5%"><a href="CadastroLogin?id=<%=u.getId()%>">Editar</a></td>
             </tr>            
              <%}%> 
             </tbody>
